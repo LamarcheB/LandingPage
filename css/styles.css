@@ -69,6 +69,7 @@ section {
     padding-left: 0;
     margin: 0;
     text-align: right;
+    text-decoration: none;
 }
 
 .navbar__menu li {
@@ -76,23 +77,22 @@ section {
     margin: 0px 10px;
     border: 1px solid white;
     color: #444;
-}
-
-.navbar__menu .menu__link {
-    display: block;
-    padding: 1em;
-    font-weight: bold;
     text-decoration: none;
-    color: #000;
 }
 
-.navbar__menu .menu__link:hover {
-    background: #333;
+.navBarListItem a {
+    color: black;
+    text-decoration: none;
+}
+
+.navBarListItem a:hover {
+    background: #222;
     color: #fff;
     transition: ease 0.3s all;
+    text-decoration: none;
 }
 
-.navbar__menu .navActiveSection {
+.navbar__menu .navActiveSection a {
     background-color: #444;
     color: white;
 }

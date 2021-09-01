@@ -26,12 +26,14 @@ function navBar() {
         // Create the list item
         const li = document.createElement('li');
         // Create the li innertext via data-nav tag
-        li.innerText = `${section.dataset.nav}`;
+        li.innerHTML = `<a href="#${section.id}">${section.dataset.nav}</a>`;
+        // li.innerText = `${section.dataset.nav}`;
         li.classList.add("navBarListItem");
         li.id = `navItem-${section.id}`;
 
         // create an event listener to scroll to section
-        li.addEventListener("click", function () {
+        li.addEventListener("click", function (e) {
+            e.preventDefault();
             section.scrollIntoView({
                 behavior: "smooth"
             });
@@ -52,10 +54,11 @@ function activeSection() {
             const navItem = document.querySelector(`#navItem-${section.id}`);
             // Determine when each section should is in focus and add/remove active section
             if (rect.top <= 10 && rect.bottom >= 150) {
-                navItem.classList.add('navActiveSection')
+                navItem.classList.add('navActiveSection');
+
             }
             else {
-                navItem.classList.remove('navActiveSection')
+                navItem.classList.remove('navActiveSection');
             }
         }
     })
